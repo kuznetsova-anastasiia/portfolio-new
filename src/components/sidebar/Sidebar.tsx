@@ -33,7 +33,7 @@ export default function Sidebar() {
           <a href="mailto:anastasiia.kzntsva@gmail.com">
             <button className="Sidebar__contact-btn">📥 Contact me</button>
           </a>
-          <a href="/resume.pdf" download="Anastasiia_Kuznetsova_CV_Fullstack.pdf">
+          <a href="/Anastasiia_Kuznetsova_CV_Fullstack.pdf" download="Anastasiia_Kuznetsova_CV_Fullstack.pdf">
             <button className="Sidebar__resume-btn">📄 Resume</button>
           </a>
         </div>
