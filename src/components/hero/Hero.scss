@@ -1,0 +1,153 @@
+@import "../../assets/styles/_variables.scss";
+@import "../../assets/styles/_mixins.scss";
+
+.Hero {
+  @include flexRow;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $primary-dark-blue;
+  border-radius: $border-radius-large;
+  padding: 4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    flex: 1;
+    max-width: 600px;
+  }
+
+  &__title {
+    @include heading-hero;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    @include body-large;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  &__icons {
+    @include flexRow;
+    gap: 1rem;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba($text-white, 0.1);
+    border-radius: 50%;
+    @include flexRow;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  &__illustration {
+    position: relative;
+    margin-left: 2rem;
+  }
+
+  &__textbook {
+    background-color: $bg-card;
+    border-radius: $border-radius-large;
+    padding: 2rem;
+    box-shadow: $shadow-heavy;
+    max-width: 400px;
+    border: 2px solid $border-medium;
+  }
+
+  &__textbook-cover {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $border-light;
+  }
+
+  &__textbook-title {
+    @include heading-3;
+    color: $primary-dark-blue;
+    margin-bottom: 0.5rem;
+  }
+
+  &__textbook-subtitle {
+    @include body-base;
+    color: $text-medium;
+    font-weight: $font-weight-medium;
+  }
+
+  &__tech-stack {
+    @include flexColumn;
+    gap: 1.5rem;
+  }
+
+  &__tech-section {
+    @include flexColumn;
+    gap: 0.75rem;
+  }
+
+  &__tech-category {
+    @include body-base;
+    font-weight: $font-weight-semibold;
+    color: $primary-orange;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: $font-size-sm;
+  }
+
+  &__tech-items {
+    @include flexRow;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__tech-item {
+    background-color: rgba($primary-dark-blue, 0.1);
+    color: $primary-dark-blue;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    @include caption;
+    font-weight: $font-weight-medium;
+    border: 1px solid rgba($primary-dark-blue, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $primary-orange;
+      color: $text-white;
+      transform: translateY(-2px);
+      box-shadow: $shadow-light;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .Hero {
+    @include flexColumn;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .Hero__illustration {
+    margin-left: 0;
+  }
+
+  .Hero__textbook {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Hero {
+    padding: 2rem;
+  }
+
+  .Hero__title {
+    font-size: $font-size-4xl;
+  }
+
+  .Hero__textbook {
+    padding: 1.5rem;
+  }
+}

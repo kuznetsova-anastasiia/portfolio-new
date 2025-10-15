@@ -1,0 +1,33 @@
+@import "../../assets/styles/_variables.scss";
+@import "../../assets/styles/_mixins.scss";
+
+.Home {
+  @include flexRow;
+  min-height: 100vh;
+  background-color: $bg-cream;
+
+  // Main Content Area
+  &__main {
+    flex: 1;
+    margin-left: $sidebar-width;
+    padding: 40px $content-padding;
+    min-height: 100vh;
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .Home {
+    &__main {
+      margin-left: 280px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .Home {
+    &__main {
+      margin-left: 0;
+    }
+  }
+}

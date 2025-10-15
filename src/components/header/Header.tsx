@@ -1,23 +1,20 @@
-import { LogoIcon } from "@/assets/icons";
 import "./Header.scss";
 
 export default function Header() {
-    return (
-        <div className="Header">
-          <LogoIcon />
-
-          <button className="Header__button">
-            Home
-          </button>
-          <button className="Header__button">
-            About/Skills
-          </button>
-          <button className="Header__button">
-            Projects
-          </button>
-          <button className="Header__button-contact">
-            Contact me
-          </button>
-        </div>
-    )
+  return (
+    <header className="Header">
+      {/* <div className="Header__search">
+        <div className="Header__search-icon">🔍</div>
+        <input
+          type="text"
+          placeholder="Search"
+          className="Header__search-input"
+        />
+      </div> */}
+      <div className="Header__user-profile">
+        <div className="Header__user-avatar">👩🏼‍💻</div>
+        <span className="Header__user-name">Anastasiia Kuznetsova</span>
+      </div>
+    </header>
+  );
 }

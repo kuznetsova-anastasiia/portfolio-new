@@ -1,0 +1,118 @@
+@import "../../assets/styles/_variables.scss";
+@import "../../assets/styles/_mixins.scss";
+
+.Projects {
+  padding-top: 40px;
+  margin-bottom: 1rem;
+
+  // Project Filters
+  &__filters {
+    @include flexRow;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid $border-medium;
+    background-color: $bg-light;
+    border-radius: 25px;
+    @include body-base;
+    color: $text-medium;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $primary-orange;
+      color: $primary-orange;
+    }
+
+    &--active {
+      background-color: $primary-orange;
+      border-color: $primary-orange;
+      color: $text-white;
+      pointer-events: none;
+    }
+  }
+
+  // Projects Title
+  &__title {
+    @include heading-2;
+    margin-bottom: 2rem;
+  }
+
+  // Projects Grid
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  &__card {
+    background-color: $bg-card;
+    border-radius: $border-radius-large;
+    padding: 2rem;
+    box-shadow: $shadow-light;
+    transition: all 0.3s ease;
+    border: 1px solid $border-light;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: $shadow-medium;
+    }
+  }
+
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius-large;
+    transition: all 0.3s ease;
+    box-shadow: 1px 2px 15px 3px $border-light;
+  }
+
+  &__card-title {
+    @include heading-4;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @include body-base;
+    margin-bottom: 1.5rem;
+    line-height: $line-height-relaxed;
+  }
+
+  &__tech {
+    @include flexRow;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__tech-tag {
+    background-color: rgba($primary-orange, 0.1);
+    color: $primary-orange;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    @include caption;
+    font-weight: $font-weight-medium;
+  }
+
+  &__more {
+    @include body-base;
+    margin-top: 2rem;
+    align-self: center;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .Projects__grid {
+    grid-template-columns: 1fr;
+  }
+}

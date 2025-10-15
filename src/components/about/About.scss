@@ -1,0 +1,64 @@
+@import "../../assets/styles/_variables.scss";
+@import "../../assets/styles/_mixins.scss";
+
+.About {
+  padding-top: 40px;
+  margin-bottom: 1rem;
+
+  &__title {
+    @include heading-2;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    @include flexRow;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  &__text {
+    flex: 2;
+
+    p {
+      @include body-base;
+      margin-bottom: 1.5rem;
+      line-height: $line-height-relaxed;
+    }
+  }
+
+  &__skills {
+    flex: 1;
+    background-color: $bg-card;
+    padding: 2rem;
+    border-radius: $border-radius-large;
+    box-shadow: $shadow-light;
+  }
+
+  &__skills-title {
+    @include heading-4;
+    margin-bottom: 1.5rem;
+  }
+
+  &__skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  &__skill-item {
+    background-color: rgba($primary-teal, 0.1);
+    color: $primary-teal;
+    padding: 0.75rem 1rem;
+    border-radius: $border-radius;
+    @include body-base;
+    font-weight: $font-weight-medium;
+    text-align: center;
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .About__content {
+    @include flexColumn;
+  }
+}

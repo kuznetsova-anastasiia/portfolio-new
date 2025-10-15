@@ -1,0 +1,70 @@
+@import "../../assets/styles/_variables.scss";
+@import "../../assets/styles/_mixins.scss";
+
+.Contact {
+  padding-top: 40px;
+  margin-bottom: 1rem;
+
+  &__title {
+    @include heading-2;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    @include flexColumn;
+    align-items: center;
+    text-align: center;
+    background-color: $bg-card;
+    padding: 20px 32px;
+    border-radius: $border-radius-large;
+    box-shadow: $shadow-light;
+  }
+
+  &__text {
+    @include body-large;
+    margin-bottom: 16px;
+    max-width: 600px;
+    color: $text-medium;
+  }
+
+  &__links {
+    @include flexRow;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  &__link {
+    @include flexRow;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background-color: $bg-light;
+    border: 1px solid $border-light;
+    border-radius: $border-radius;
+    text-decoration: none;
+    @include body-base;
+    color: $text-dark;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $primary-orange;
+      color: $text-white;
+      transform: translateY(-2px);
+      box-shadow: $shadow-medium;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .Contact__links {
+    @include flexColumn;
+    align-items: center;
+  }
+}

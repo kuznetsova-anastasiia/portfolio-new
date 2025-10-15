@@ -1,0 +1,115 @@
+@import "../../assets/styles/_variables.scss";
+@import "../../assets/styles/_mixins.scss";
+
+.Sidebar {
+  width: $sidebar-width;
+  background-color: $bg-light;
+  border-right: 1px solid $border-light;
+  padding: 2rem 0;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+
+  &__content {
+    @include flexColumn;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 2rem;
+  }
+
+  // Logo Styles
+  &__logo {
+    @include flexRow;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__logo-text {
+    @include heading-4;
+    color: $primary-dark-blue;
+  }
+
+  // Navigation Styles
+  &__nav {
+    @include flexColumn;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__nav-item {
+    @include flexRow;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: $border-radius;
+    text-decoration: none;
+    @include body-base;
+    color: $text-medium;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($primary-orange, 0.1);
+      color: $primary-orange;
+    }
+
+    &--active {
+      background-color: $primary-orange;
+      color: $text-white;
+
+      &:hover {
+        background-color: $primary-dark-blue;
+        color: $text-white;
+      }
+    }
+  }
+
+  &__nav-icon {
+    font-size: 1.25rem;
+    width: 24px;
+    text-align: center;
+  }
+
+  &__buttons {
+    @include flexColumn;
+    gap: 12px;
+
+  }
+
+  // Contact Button
+  &__contact-btn {
+    @include button-secondary;
+    width: 100%;
+    font-size: $font-size-base;
+    padding: 16px 20px;
+  }
+
+  &__resume-btn {
+    @include button-secondary;
+    width: 100%;
+    font-size: $font-size-base;
+    padding: 16px 20px;
+  }
+
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .Sidebar {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+}

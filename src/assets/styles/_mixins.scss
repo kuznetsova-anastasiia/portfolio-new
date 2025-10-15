@@ -1,0 +1,158 @@
+// Font Families
+$font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  sans-serif;
+$font-secondary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, sans-serif;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Font Sizes for full-sized design
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
+$font-size-5xl: 3rem; // 48px
+$font-size-6xl: 3.75rem; // 60px
+$font-size-7xl: 4.5rem; // 72px
+
+// Line Heights
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+// Typography Mixins for Full-Sized Design
+@mixin heading-hero {
+  font-family: $font-secondary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-6xl;
+  line-height: $line-height-tight;
+  color: $text-white;
+  margin: 0;
+}
+
+@mixin heading-1 {
+  font-family: $font-secondary;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-5xl;
+  line-height: $line-height-tight;
+  color: $text-dark;
+  margin: 0;
+}
+
+@mixin heading-2 {
+  font-family: $font-secondary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-4xl;
+  line-height: $line-height-tight;
+  color: $text-dark;
+  margin: 0;
+}
+
+@mixin heading-3 {
+  font-family: $font-secondary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-3xl;
+  line-height: $line-height-tight;
+  color: $text-dark;
+  margin: 0;
+}
+
+@mixin heading-4 {
+  font-family: $font-secondary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-2xl;
+  line-height: $line-height-normal;
+  color: $text-dark;
+  margin: 0;
+}
+
+@mixin body-large {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  color: $text-white;
+}
+
+@mixin body-base {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $text-medium;
+}
+
+@mixin body-small {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+  color: $text-light;
+}
+
+@mixin caption {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xs;
+  line-height: $line-height-normal;
+  color: $text-light;
+}
+
+// Button Mixins
+@mixin button-primary {
+  background-color: $primary-orange;
+  color: $text-white;
+  border: none;
+  border-radius: $border-radius;
+  padding: 0.75rem 1.5rem;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-orange, 10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-medium;
+  }
+}
+
+@mixin button-secondary {
+  background-color: transparent;
+  color: $text-dark;
+  border: 2px solid $border-medium;
+  border-radius: $border-radius;
+  padding: 0.75rem 1.5rem;
+  font-family: $font-primary;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $primary-dark-blue;
+    color: $text-white;
+    border-color: $primary-dark-blue;
+  }
+}
+
+// === flexBox === //
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
