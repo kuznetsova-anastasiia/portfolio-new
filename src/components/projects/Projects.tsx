@@ -52,7 +52,7 @@ export default function Projects() {
         "Nice Store is platform that offers a wide range of gadgets for tech enthusiasts. Our goal is to provide an enjoyable shopping experience where users can explore and purchase their favorite gadgets with ease.",
       category: "Pet-projects",
       image: "/images/nice-store.jpg",
-      technologies: ["React", "TypeScript", "SCSS", "PostgreSQL", "Node.js"],
+      technologies: ["React", "TypeScript", "SCSS", "PostgreSQL", "Node.js", "Clerk"],
       href: "https://github.com/SolBingers/nice_store",
     },
   ];
